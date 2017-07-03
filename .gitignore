@@ -1,0 +1,7 @@
+*.pyc
+*~
+__pychache__
+MSI_env
+sb.sqlite3
+/static
+.DS_Store
