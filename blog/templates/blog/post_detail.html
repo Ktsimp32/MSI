@@ -14,10 +14,11 @@
                     {% if user.is_authenticated %}
                         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
                     {% endif %}
+                    <center><h3><a href="/more_info">More Info</a></h3></center>
                 </div>
             </div>
         </div>
     </article>
     <hr>
-    <meta http-equiv="refresh" content="7;url=/more_info">
+    <meta http-equiv="refresh" content="30;url=/more_info">
 {% endblock %}

@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^post/new/$', views.post_new, name='post_new'),
     url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
     url(r'^more_info', views.contact_form, name='contact_form'),
+    url(r'^thank_you', views.thank_you, name='thank_you'),
 
 ]

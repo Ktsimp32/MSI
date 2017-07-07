@@ -3,14 +3,16 @@
 {% block content %}
 <div class="container", style="width: 100%">
     <h2>Sign up to get more info about a Medicare Supplemental.</h2>
-    <div class="row">
-        {% for field in form  %}
-          <div class="col-sm-6">
-            <b>{{ field.label_tag }}</b>
-              <ul>{{ field }}</ul>
-          </div>
-        {% endfor %}
-    </div>
-    <center><button type="submit" class="save btn btn-default">Submit</button></center>
+    <form method="POST" class="post-form">{% csrf_token %}
+        <div class="row">
+            {% for field in form  %}
+              <div class="col-sm-6">
+                <b>{{ field.label_tag }}</b>
+                  <ul>{{ field }}</ul>
+              </div>
+            {% endfor %}
+        </div>
+        <center><button type="submit" class="save btn btn-default">Submit</button></center>
+    </form>
   </div>
 {% endblock %}

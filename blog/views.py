@@ -9,6 +9,11 @@ def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts':posts})
 
+# View to render Thank you message
+def thank_you(request):
+    return render(request, 'blog/thank_you.html')
+
+
 # View to render individual posts
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -51,7 +56,7 @@ def contact_form(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('/thank_you', pk=post.pk)
     else:
         form = ContactForm()
     return render(request, 'blog/contact_form.html', {'form': form})
